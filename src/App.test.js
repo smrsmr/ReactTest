@@ -9,7 +9,7 @@ const comment = {
 	name: 'smr',
 	text: 'I Love You Even Day',
 	date: new Date()
-}
+} 
 /* class test extends Component {
 	render() {
 		return (
