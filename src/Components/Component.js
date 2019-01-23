@@ -22,3 +22,17 @@ export function Comment(prop) {
 		</div>
 	)
 }
+export function ActionLink() {
+	function handleClick(e) {
+		//阻止默认点击事件 必须使用具体方法 不能使用return false;
+		e.preventDefault()
+		console.log('shtop click');
+	}
+	return (
+		<div className="App">
+			<a href="www.baidu.com" onClick={handleClick}>
+				Click Me
+			</a>
+		</div>
+	)
+}
