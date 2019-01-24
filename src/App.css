@@ -54,3 +54,65 @@
             transform: rotate(360deg);
   }
 }
+
+.App-red {
+	width: 100px;
+	height: 50px;
+	overflow: hidden;
+	background: url('http://img1.gtimg.com/autoguangzhou/pics/hv1/153/179/211/13766073.jpg') center center no-repeat;
+	background-size: 100%;
+	margin: 10px 10px;
+	display: inline-block;
+}
+.App-rotate {
+	animation:lds-hourglass 0.01s infinite linear;
+	-webkit-animation:lds-hourglass 0.01s infinite linear;
+}
+.App-rotate-t1 {
+	-webkit-animation-delay: 0.01s;
+	        animation-delay: 0.01s;
+}
+.App-rotate-t2 {
+	-webkit-animation-delay: 0.5s;
+					animation-delay: 0.5s;
+}
+.App-rotate-t3 {
+	-webkit-animation-delay: 0.8s;
+					animation-delay: 0.8s;
+}
+.App-rotate-t4 {
+	-webkit-animation-delay: 1s;
+					animation-delay: 1s;
+}
+@-webkit-keyframes lds-hourglass {
+	0% {
+				-webkit-transform:rotateX(0);
+				transform:rotateX(0);
+				-moz-transform:rotateX(0);
+				-ms-transform:rotateX(0);
+				-o-transform:rotateX(0);
+}
+	100% {
+			-webkit-transform:rotateX(1800deg);
+			transform:rotateX(1800deg);
+			-moz-transform:rotateX(1800deg);
+			-ms-transform:rotateX(1800deg);
+			-o-transform:rotateX(1800deg);
+}
+}
+@keyframes lds-hourglass {
+	0% {
+				-webkit-transform:rotateX(0);
+				transform:rotateX(0);
+				-moz-transform:rotateX(0);
+				-ms-transform:rotateX(0);
+				-o-transform:rotateX(0);
+}
+	100% {
+			-webkit-transform:rotateX(1800deg);
+			transform:rotateX(1800deg);
+			-moz-transform:rotateX(1800deg);
+			-ms-transform:rotateX(1800deg);
+			-o-transform:rotateX(1800deg);
+}
+}
