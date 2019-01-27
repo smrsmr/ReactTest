@@ -17,7 +17,7 @@ const numList = [2, 3, 4, 5, 6];
 let ITem = numList.map((v, i) => 
 	<li key={i}>{v}</li>
 )
-class test extends Component {
+class test extends Component { 
 	constructor(props) {
 		super(props);
 		this.state = { isWran: true };
