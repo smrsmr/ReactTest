@@ -1,6 +1,6 @@
 import React from 'react';
 //定义组件
-export function Welcome(prop) {
+function Welcome(prop) {
 	return (
 		<div className="App">
 			<h1>Hello,{prop.name}</h1>
@@ -10,7 +10,7 @@ export function Welcome(prop) {
 function formData(date) {
 	return date.toLocaleDateString()
 }
-export function Comment(prop) {
+function Comment(prop) {
 	return (
 		<div className="App">
 			<img src={prop.logo} alt="logo" />
@@ -22,7 +22,7 @@ export function Comment(prop) {
 		</div>
 	)
 }
-export function ActionLink() {
+function ActionLink() {
 	function handleClick(e) {
 		//阻止默认点击事件 必须使用具体方法 不能使用return false;
 		e.preventDefault()
@@ -35,4 +35,10 @@ export function ActionLink() {
 			</a>
 		</div>
 	)
+}
+
+export  {
+	Welcome,
+	Comment,
+	ActionLink
 }
