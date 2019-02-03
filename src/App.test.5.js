@@ -30,9 +30,9 @@ function tryConvert(temperature, convert) {
 }
 function BoilingVerdict(props) {
 	if (props.celsius >= 100) {
-		return <p>水已经烧开了</p>
+		return <p>温度已达到顶值100+</p>
 	}
-	return <p>水还在继续加热</p>
+	return <p>温度正在持续增加。。。</p>
 }
 //定义input组件
 class TemperatureInput extends Component {
@@ -62,7 +62,7 @@ class Calculator extends Component {
 		super(props);
 		this.state = {
 			scale: 'c',
-			temperature: ''
+			temperature: '0'
 		}
 		this.handleChangeCelsius = this.handleChangeCelsius.bind(this);
 		this.handleChangeFahrenheit = this.handleChangeFahrenheit.bind(this);

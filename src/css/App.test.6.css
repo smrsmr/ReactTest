@@ -1,0 +1,36 @@
+.App-main {
+	background: red;
+	width: 1000px;
+	height: 400px;
+	padding: 4px;
+	border: 2px solid yellow;
+}
+.Contacts {
+	width: 500px;
+	height: 400px;
+	float: left;
+	background-color: aquamarine;
+}
+.Chat {
+	width: 500px;
+	height: 400px;
+	float: left;
+	background-color: blue;
+}
+.FancyBorder {
+  padding: 10px 10px;
+  border: 10px solid;
+}
+
+.FancyBorder-blue {
+  border-color: blue;
+}
+
+.Dialog-title {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.Dialog-message {
+  font-size: larger;
+}
