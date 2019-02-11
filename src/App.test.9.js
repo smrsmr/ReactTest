@@ -130,10 +130,10 @@ class FilesName extends Component {
 		this.handFiles = this.handFiles.bind(this);
 	}
 	handFiles(e) {
+		e.preventDefault();
 		console.log(`Files name ${JSON.stringify(this.file.files[0].name)}`);
 		console.log(`Files type ${JSON.stringify(this.file.files[0].type)}`);
 		console.log(`Files size ${JSON.stringify(this.file.files[0].size)}`);
-		e.preventDefault();
 	}
 	render() {
 		return (
@@ -143,7 +143,6 @@ class FilesName extends Component {
 						type="file"
 						ref={(file)=>this.file=file}
 					/>
-
 					<input
 						type="button"
 						value="Submit"

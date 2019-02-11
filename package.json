@@ -2,8 +2,11 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-	"homepage":".",
+  "homepage": ".",
   "dependencies": {
+    "axios": "^0.18.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
