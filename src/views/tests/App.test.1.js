@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 // eslint-disable-next-line
-import { Comment, Welcome, ActionLink } from './Components/Component.js'; 
+import { Comment, Welcome, ActionLink } from '../../Components/Component.js'; 
 // eslint-disable-next-line
 const comment = {
 	logo: logo,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Select from './Components/Select';
+import Select from '../../Components/Select';
 
 let options1 = ['JavaScript', 'TypeScrit', 'Vue', 'React'];
 let options2 = ['白菜', '胡萝卜', '芥蓝', '土豆'];

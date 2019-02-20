@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "antd": "^3.13.5",
     "axios": "^0.18.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
