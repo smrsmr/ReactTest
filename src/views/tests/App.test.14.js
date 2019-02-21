@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import '../../css/App.css'
 import '../../css/tests/App.test.14.css'
-import { Layout, Menu, Icon, DatePicker,LocaleProvider } from 'antd';
+import { Layout, Menu, Icon, DatePicker, LocaleProvider } from 'antd';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
 import 'moment/locale/zh-cn';
+import Cascaders from '../../Components/Cascader';
 const { Header, Sider, Content } = Layout;
 const { RangePicker } = DatePicker;
 function onChange(date, dateString) {
-  console.log(date, dateString);
+	console.log(date, dateString);
 }
 export class Antd extends Component {
 	state = {
@@ -83,8 +84,8 @@ export class Antd extends Component {
 						margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280,
 					}}
 					>
-						Content
-          </Content>
+						<Cascaders />
+					</Content>
 				</Layout>
 			</Layout>
 		)
