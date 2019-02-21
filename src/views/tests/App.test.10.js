@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../../css/App.css';
 const axios = require('axios');
 //AJAX 
 class ajax extends Component {
@@ -31,13 +31,13 @@ class ajax extends Component {
           });
         }
       ) */
-		axios.get('http://127.0.0.1:3001/getArea')
+		axios.get('http://127.0.0.1:3001/userControl/getUserInfo')
 			.then(res => {
+				console.log(res.data.data);
 				this.setState({
             isLoaded: true,
             items: res.data.data
         });
-				console.log(res.data.data);
 			}).catch(error=>{console.log(error)}) 
   }
 
@@ -51,8 +51,8 @@ class ajax extends Component {
       return (
         <ul>
           {items.map((item,index) => (
-            <li key={item}>
-              {index}-{item}
+            <li key={index}>
+              {index}-{item.name}-{item.privilege}
             </li>
           ))}
         </ul>
