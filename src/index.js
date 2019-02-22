@@ -2,7 +2,7 @@ import 'react-app-polyfill/ie9';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import App from './views/tests/App.test.10';
+import App from './views/tests/App.test.13';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

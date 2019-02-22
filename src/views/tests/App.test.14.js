@@ -11,7 +11,7 @@ function onChange(date, dateString) {
 	console.log(date, dateString);
 }
 export class Antd extends Component {
-	state = {
+	state = { 
 		collapsed: false,
 	};
 
@@ -23,7 +23,7 @@ export class Antd extends Component {
 	render() {
 		return (
 			<Layout style={{ minHeight: '100vh' }}>
-				<Sider
+				<Sider 
 					trigger={null}
 					collapsible
 					collapsed={this.state.collapsed}

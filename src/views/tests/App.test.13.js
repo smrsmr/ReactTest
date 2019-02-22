@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css';
+import '../../css/App.css';
 export class ReactForm extends Component {
 	constructor(props) {
 		super(props);
@@ -35,6 +35,25 @@ export class ReactForm extends Component {
 			return v.title
 		})
 		console.log(value);
+	}
+	componentWillMount() {
+		console.log('1、组件挂载之前');
+	}
+	componentDidMount() {
+		console.log('2、组件挂载完成');
+	}
+	shouldComponentUpdate() {
+		console.log('state更新判断');
+		return false;
+	}
+	componentWillUpdate() {
+		console.log('3、组件更新之前');
+	}
+	componentDidUpdate() {
+		console.log('4、组件更新完成');
+	}
+	componentWillUnmount() {
+		console.log('组件卸载');
 	}
 	render() {
 		let chebox = this.state.list.map((v, k) => {
