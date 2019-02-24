@@ -31,7 +31,7 @@ class ajax extends Component {
           });
         }
       ) */
-		axios.get('http://127.0.0.1:3001/userControl/getUserInfo')
+		axios.get('http://127.0.0.1:3001/getArea')
 			.then(res => {
 				console.log(res.data.data);
 				this.setState({
@@ -52,7 +52,7 @@ class ajax extends Component {
         <ul>
           {items.map((item,index) => (
             <li key={index}>
-              {index}-{item.name}-{item.privilege}
+              {index}-{item}
             </li>
           ))}
         </ul>

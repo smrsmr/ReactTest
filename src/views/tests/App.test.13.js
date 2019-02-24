@@ -44,7 +44,7 @@ export class ReactForm extends Component {
 	}
 	shouldComponentUpdate() {
 		console.log('state更新判断');
-		return false;
+		return true;
 	}
 	componentWillUpdate() {
 		console.log('3、组件更新之前');
