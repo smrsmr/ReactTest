@@ -9,7 +9,7 @@ areas.forEach((area) => {
     matchCity.children = matchCity.children || [];
     matchCity.children.push({
       label: area.name,
-      value: area.code, 
+      value: area.code 
     });
   }
 });
@@ -20,14 +20,14 @@ cities.forEach((city) => {
     matchProvince.children.push({
       label: city.name,
       value: city.code,
-      children: city.children,
+      children: city.children
     });
   }
 });
 const options = provinces.map(province => ({
   label: province.name,
   value: province.code,
-  children: province.children,
+  children: province.children
 }));
 function onChange(value) {
   console.log(value);
@@ -36,19 +36,19 @@ function filter(inputValue, path) {
   return (path.some(option => (option.label).toLowerCase().indexOf(inputValue.toLowerCase()) > -1));
 }
 function displayRender(label) {
-	return label.join(' - ')
+  return label.join(' - ');
 }
 export default class C extends Component {
-	render() {
-		return (
-			<Cascader
-				style={{ width: '400px' }}
-				options={options}
-				placeholder="选择地址"
-				onChange={onChange}
-				showSearch={{ filter }}
-				displayRender={displayRender}
-			/>
-		)
-	}
+  render() {
+    return (
+      <Cascader
+        style={{ width: '400px' }}
+        options={options}
+        placeholder="选择地址"
+        onChange={onChange}
+        showSearch={{ filter }}
+        displayRender={displayRender}
+      />
+    );
+  }
 }

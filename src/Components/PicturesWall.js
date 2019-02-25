@@ -5,20 +5,20 @@ class PicturesWall extends Component {
   state = {
     previewVisible: false,
     previewImage: '',
-		fileList: [
-			{
-				uid: '1',
-				name: 'xxx.png',
-				status: 'done',
-				url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-			},
-			{
-				uid: '2',
-				name: 'xxx.png',
-				status: 'done',
-				url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-			}
-		],
+    fileList: [
+      {
+        uid: '1',
+        name: 'xxx.png',
+        status: 'done',
+        url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
+      },
+      {
+        uid: '2',
+        name: 'xxx.png',
+        status: 'done',
+        url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
+      }
+    ]
   };
 
   handleCancel = () => this.setState({ previewVisible: false })
@@ -26,7 +26,7 @@ class PicturesWall extends Component {
   handlePreview = (file) => {
     this.setState({
       previewImage: file.url || file.thumbUrl,
-      previewVisible: true,
+      previewVisible: true
     });
   }
 
@@ -58,4 +58,4 @@ class PicturesWall extends Component {
     );
   }
 }
-export default PicturesWall
+export default PicturesWall;

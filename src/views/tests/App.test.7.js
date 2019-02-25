@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css'
+import React, { Component, } from 'react';
+import './App.css';
 //函数作为子代
 /* 通常情况下，插入 JSX 中的 JavaScript 表达式将被认作字符串、React 元素或这些的一个列表。
 然而，props.children 可以像其它属性一样传递任何种类的数据，而不仅仅是 React 知道如何去渲染的数据种类。
@@ -75,14 +75,14 @@ class extend extends Component {
  * 如果你想让类似 false、true、null 或 undefined 出现在输出中，你必须先把它转换成字符串 :
  */
 class extend extends Component {
-	render() {
-		return (
-			<div className="App">
-				<div>{String(true)}</div>
-				<div>{String(null)}</div>
-				<div>{String(undefined)}</div>
-			</div>
-		)
-	}
+  render() {
+    return (
+      <div className="App">
+        <div>{String(true)}</div>
+        <div>{String(null)}</div>
+        <div>{String(undefined)}</div>
+      </div>
+    );
+  }
 }
-export default extend
+export default extend;
