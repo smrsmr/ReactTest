@@ -31,14 +31,14 @@ class ajax extends Component {
           });
         }
       ) */
-		axios.get('http://127.0.0.1:3001/getArea')
-			.then(res => {
-				console.log(res.data.data);
-				this.setState({
-            isLoaded: true,
-            items: res.data.data
+    axios.get('http://127.0.0.1:3001/getArea')
+      .then(res => {
+        console.log(res.data.data);
+        this.setState({
+          isLoaded: true,
+          items: res.data.data
         });
-			}).catch(error=>{console.log(error)}) 
+      }).catch(error=>{console.log(error);}); 
   }
 
   render() {
@@ -61,4 +61,4 @@ class ajax extends Component {
   }
 }
 
-export default ajax
+export default ajax;
