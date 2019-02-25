@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../../css/App.css';
 /**
  * 条件渲染
  */
@@ -30,86 +30,86 @@ class test extends Component {
 } */
 
 function Login(props) {
-	return (
-		<button onClick={props.onClick}>
+  return (
+    <button onClick={props.onClick}>
 			Login
-		</button>
-	)
-};
+    </button>
+  );
+}
 function LoginOut(props) {
-	return (
-		<button onClick={props.onClick}>
+  return (
+    <button onClick={props.onClick}>
 			LoginOut
-		</button>
-	)
-};
+    </button>
+  );
+}
 //与运算符 &&
 function MaxBox(props) {
-	let unreadMessages = props.unreadMessages;
-	return (
-		<div>
-			<h1>与运算符 &&</h1>
-			{unreadMessages.length > 3 &&
+  const {unreadMessages} = props;
+  return (
+    <div>
+      <h1>与运算符 &&</h1>
+      {unreadMessages.length > 3 &&
 				<h2>
 					This Max 3
 				</h2>
-			}
-		</div>
-	)
-};
+      }
+    </div>
+  );
+}
 //三目运算符
 function Ternary(props) {
-	let unreadMessages = props.unreadMessages;
-	return (
-		<div>
-			<h1>三目运算符</h1>
-			{unreadMessages.length >= 3 ? <h2>数组长度大于等于3</h2> : <h2>数组长度小于3</h2>}
-		</div>
-	)
+  const {unreadMessages,title} = props;
+  return (
+    <div>
+      <h1>{title}</h1>
+      {unreadMessages.length >= 3 ? <h2>数组长度大于等于3</h2> : <h2>数组长度小于3</h2>}
+    </div>
+  );
 }
 //
 function Rotate(props) {
-	return (
-		<p className={props.styles}></p>
-	)
+  return (
+    <p className={props.styles}></p>
+  );
 }
-let Array = ['red', 'yellow'];
+const Array = ['red', 'yellow'];
 class test extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isLoggedIn: false
-		};
-		this.handleLoginClick = this.handleLoginClick.bind(this);
-		this.handleLogoutClick = this.handleLogoutClick.bind(this);
-	}
-	handleLoginClick() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false
+    };
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+  }
+  handleLoginClick() {
     this.setState({isLoggedIn: true});
   }
 
   handleLogoutClick() {
     this.setState({isLoggedIn: false});
   }
-	render() {
-		const isLoggedIn = this.state.isLoggedIn;
-		let button = null;
-		if (isLoggedIn) {
-			button = <Login onClick={this.handleLogoutClick} />
-		} else {
-			button = <LoginOut onClick={this.handleLoginClick} />
+  render() {
+    const {isLoggedIn} = this.state;
+    let button = null;
+    if (isLoggedIn) {
+      button = <Login onClick={this.handleLogoutClick} />;
+    } else {
+      button = <LoginOut onClick={this.handleLoginClick} />;
 
-		}
-		return (
-			<div className="App">
-				{button}
-				<MaxBox unreadMessages={Array} />
-				<Ternary unreadMessages={Array} />
-				<Rotate styles="App-red App-rotate App-rotate-t1" /> 
-				<Rotate styles="App-red App-rotate App-rotate-t2" /> 
-				<Rotate styles="App-red App-rotate App-rotate-t3" /> 
-				<Rotate styles="App-red App-rotate App-rotate-t4" /> 
-			</div>
-		)
-	}
+    }
+    return (
+      <div className="App">
+        {button}
+        <MaxBox unreadMessages={Array} />
+        <Ternary unreadMessages={Array} title="运算符" />
+        <Rotate styles="App-red App-rotate App-rotate-t1" /> 
+        <Rotate styles="App-red App-rotate App-rotate-t2" /> 
+        <Rotate styles="App-red App-rotate App-rotate-t3" /> 
+        <Rotate styles="App-red App-rotate App-rotate-t4" /> 
+      </div>
+    );
+  }
 }
-export default test
+export default test;

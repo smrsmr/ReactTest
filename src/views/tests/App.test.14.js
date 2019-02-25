@@ -65,7 +65,7 @@ export class Antd extends Component {
 	            selectedKeys={this.state.pathName}
 	          >
 	            <Menu.Item key="user">
-	              <Link to="/user">
+	              <Link to="/user?aid=789">
 	                <Icon type="user" />
 	                <span>user</span>
 	              </Link>
@@ -77,7 +77,7 @@ export class Antd extends Component {
 	              </Link>
 	            </Menu.Item>
 	            <SubMenu key="mail" title={<span><Icon type="mail" /><span>NavigationOne</span></span>}>
-	              <Menu.Item key="option1"><Link to="/mail/option1">Option 1</Link></Menu.Item>
+	              <Menu.Item key="option1"><Link to="/mail/option1?aid=111">Option 1</Link></Menu.Item>
 	              <Menu.Item key="option2"><Link to="/mail/option2">Option 2</Link></Menu.Item>
 	              <Menu.Item key="option3"><Link to="/mail/option3">Option 3</Link></Menu.Item>
 	              <Menu.Item key="option4"><Link to="/mail/option4">Option 4</Link></Menu.Item>

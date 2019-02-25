@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 class Mail extends Component {
 	state = {
-		ID: null
+	  ID: null
 	}
 	componentWillMount() {
-		this.setState({
-			ID: this.props.match.params.id
-		})
+	  this.setState({
+	    ID: this.props.match.params.id
+	  });
 	}
 	renderDetail(pageType) {
-		let dynamicDetail = require(`./${pageType}`).default;
-		return dynamicDetail
+	  const dynamicDetail = require(`./${pageType}`).default;
+	  return dynamicDetail;
 	}
 	render() {
-		const pageType = this.props.match.params.id; 
-		let DynamicDetail = this.renderDetail(pageType); 
-		return (
-			<div>
-				<DynamicDetail />
-			</div>
-		);
+	  const pageType = this.props.match.params.id; 
+	  const DynamicDetail = this.renderDetail(pageType); 
+	  return (
+	    <div>
+	      <DynamicDetail />
+	    </div>
+	  );
 	}
 }
 
