@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Layout, Menu, Icon, DatePicker, LocaleProvider } from 'antd';
 import '../../css/App.css';
@@ -12,6 +12,7 @@ import user from '../../Components/User';
 import picturesWall from '../../Components/PicturesWall'; 
 import home from '../../Components/Home';
 import mail from '../../Components/mail/mail';
+import NoMatch from '../../Components/404/NoMatch';
 
 const { Header, Sider, Content } = Layout;
 const { RangePicker } = DatePicker;
@@ -78,7 +79,7 @@ export class Antd extends Component {
 	              selectedKeys={this.state.pathName}
 	            >
 	              <Menu.Item key="user">
-	                <Link to="/user?aid=789">
+	                <Link to="/user">
 	                  <Icon type="user" />
 	                  <span>user</span>
 	                </Link>
@@ -90,7 +91,7 @@ export class Antd extends Component {
 	                </Link>
 	              </Menu.Item>
 	              <SubMenu key="mail" title={<span><Icon type="mail" /><span>NavigationOne</span></span>}>
-	                <Menu.Item key="option1"><Link to="/mail/option1?aid=111">Option 1</Link></Menu.Item>
+	                <Menu.Item key="option1"><Link to="/mail/option1">Option 1</Link></Menu.Item>
 	                <Menu.Item key="option2"><Link to="/mail/option2">Option 2</Link></Menu.Item>
 	                <Menu.Item key="option3"><Link to="/mail/option3">Option 3</Link></Menu.Item>
 	                <Menu.Item key="option4"><Link to="/mail/option4">Option 4</Link></Menu.Item>
@@ -137,10 +138,13 @@ export class Antd extends Component {
 	              margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280
 	            }}
 	            >
-	              <Route exact path="/" component={home} />
-	              <Route path="/user" component={user} />
-	              <Route path="/picturesWall" component={picturesWall} />
-	              <Route path="/mail/:id" component={mail} />
+	              <Switch>
+	                <Route exact path="/" component={home} />
+	                <Route path="/user" component={user} />
+	                <Route path="/picturesWall" component={picturesWall} />
+	                <Route path="/mail/:id" component={mail} />
+	                <Route component={NoMatch} />
+	              </Switch>
 	            </Content>
 	          </Layout>
 	        </Layout>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class option2 extends Component {
   componentDidMount() {
-    console.log(this.props);
+    
   }
   render() {
     return (
