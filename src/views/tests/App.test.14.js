@@ -8,9 +8,9 @@ import 'antd/dist/antd.css';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
 import 'moment/locale/zh-cn';
 //引入侧边栏组件
-import user from '../../Components/User';
-import picturesWall from '../../Components/PicturesWall'; 
-import home from '../../Components/Home';
+import user from '../../Components/user/User';
+import picturesWall from '../../Components/PicturesWall/PicturesWall'; 
+import home from '../../Components/home';
 import mail from '../../Components/mail/mail';
 import NoMatch from '../../Components/404/NoMatch';
 
