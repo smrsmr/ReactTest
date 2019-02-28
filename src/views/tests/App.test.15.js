@@ -120,6 +120,7 @@ export class Layouts extends Component {
 	              margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280
 	            }}
 	            >
+	              {/* <Route exact path="/" render={() => <Redirect to="/welcome" component={Home} />} /> */}
 	              <Switch>
 	                {
 	                  router.map((router,key) => {
@@ -134,6 +135,7 @@ export class Layouts extends Component {
 	                  })
 	                }
 	                <Route component={NoMatch} />
+	                {/* <Redirect path="*" to="/" />  //当以上的path均不匹配时，重定向到'/' */}
 	              </Switch>
 	            </Content>
 	          </Layout>

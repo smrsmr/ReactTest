@@ -1,17 +1,18 @@
 /**
  * router 配置文件
  */
-import Home from '../Components/home';
-import User from '../Components/user/User';
-import PicturesWall from '../Components/PicturesWall/PicturesWall';
-import Mail from '../Components/mail/mail';
-import barChart from '../Components/barChart/index';
+import asyncComponent from '../Components/AsyncComponent';
+// import Home from '../Components/Home';
+// import User from '../Components/user/User';
+// import PicturesWall from '../Components/PicturesWall/PicturesWall';
+// import Mail from '../Components/mail/mail';
+// import barChart from '../Components/barChart/index';
 const routes = [
   {
     key: 'home',
     path: '/',
     exact: 'exact',
-    component: Home
+    component: asyncComponent(()=>import('../Components/Home'))
   },
   {
     key: 'user',
@@ -20,7 +21,7 @@ const routes = [
       icon: 'user',
       span: 'user'
     },
-    component: User
+    component: asyncComponent(()=>import('../Components/user/User'))
   },
   {
     key: 'picturesWall',
@@ -29,7 +30,7 @@ const routes = [
       icon: 'upload',
       span: 'picturesWall'
     },
-    component: PicturesWall
+    component: asyncComponent(()=>import('../Components/PicturesWall/PicturesWall'))
   },
   {
     key: 'barChart',
@@ -38,7 +39,7 @@ const routes = [
       icon: 'bar-chart',
       span: 'barChart'
     },
-    component: barChart,
+    component: asyncComponent(()=>import('../Components/barChart/index')),
     routes: [
       {
         key: 'barChart1',
@@ -59,7 +60,7 @@ const routes = [
       icon: 'mail',
       span: 'mail'
     },
-    component: Mail,
+    component: asyncComponent(()=>import('../Components/mail/mail')),
     routes: [{
       key: 'mail1',
       path: '/mail/mail1',

@@ -10,6 +10,7 @@ class Mail extends Component {
 	}
 	renderDetail(pageType) {
 	  const dynamicDetail = require(`./${pageType}`).default;
+
 	  return dynamicDetail;
 	}
 	render() {
@@ -17,7 +18,7 @@ class Mail extends Component {
 	  const DynamicDetail = this.renderDetail(pageType); 
 	  return (
 	    <div>
-	      <DynamicDetail />
+	      <DynamicDetail /> 
 	    </div>
 	  );
 	}
