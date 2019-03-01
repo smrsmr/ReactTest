@@ -20,7 +20,9 @@ class PicturesWall extends Component {
       }
     ]
   };
-
+  componentWillMount() {
+    
+  }
   handleCancel = () => this.setState({ previewVisible: false })
 
   handlePreview = (file) => {

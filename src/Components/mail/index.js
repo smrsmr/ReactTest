@@ -9,7 +9,7 @@ class Mail extends Component {
 	  });
 	}
 	renderDetail(pageType) {
-	  const dynamicDetail = require(`./${pageType}`).default;
+	  const dynamicDetail = require(`./${pageType}/index`).default;
 
 	  return dynamicDetail;
 	}

@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { Layout, Menu, Icon, DatePicker, LocaleProvider } from 'antd';
+//阿里图标库
+import '../../css/iconfont/iconfont.css';
 import '../../css/App.css';
 import '../../css/tests/App.test.14.css';
 import 'antd/dist/antd.css';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
 import 'moment/locale/zh-cn';
-// import Sidebar from '../../Components/Sidebar';
 import router from '../../router/index';
 //404组件
 import NoMatch from '../../Components/404/NoMatch';
-
+import { Router as HashRouter, Route,Link, Switch} from 'react-router-dom';
+// import { BrowserRouter as HashRouter, Route, Link, Switch } from 'react-router-dom';
+import createHistory from 'history/createHashHistory';
+const history = createHistory();
 const { Header, Sider, Content } = Layout;
 const { RangePicker } = DatePicker;
 const { SubMenu } = Menu;
@@ -28,7 +31,7 @@ export class Layouts extends Component {
   }
   componentWillMount() {
 	  //组件挂载之前时候 获取url
-	  const pathname = window.location.pathname.split('/').filter(i => i);
+	  const pathname = window.location.hash.split('/').filter(i => i);
 	  this.setState({
 	    pathName: pathname
 	  });
@@ -46,7 +49,8 @@ export class Layouts extends Component {
 	  });
 	}
 	MenuClick = () => {
-	  const pathname = window.location.pathname.split('/').filter(i => i);
+	  //点击侧边栏列表添加样式
+	  const pathname = window.location.hash.split('/').filter(i => i);
 	  this.setState({
 	    pathName: pathname
 	  });
@@ -66,9 +70,9 @@ export class Layouts extends Component {
 	      >
 	        {
 	          //一级路由
-	          !item.routes && !item.exact && (
+	          !item.childrens && !item.exact && (
 	            <Menu.Item key={item.key}>
-	              <Link to={item.path}>
+	              <Link to={item.path} replace>
 	                <Icon type={item.title.icon} />
 	                <span>{item.title.span}</span>
 	              </Link>
@@ -76,12 +80,12 @@ export class Layouts extends Component {
 	          )
 	        }
 	        {
-	          //二级路由
-	          item.routes && !item.exact && (
+	          //二级路由 
+	          item.childrens && !item.exact && (
 	            <SubMenu key={item.key} title={<span><Icon type={item.title.icon} /><span>{item.title.span}</span></span>}>
 	              {
-	                item.routes.map(v => (
-	                  <Menu.Item key={v.key}><Link to={v.path}>{v.title}</Link></Menu.Item>
+	                item.childrens.map(v => (
+	                  <Menu.Item key={v.key}><Link to={v.path} replace><i className="iconfont" dangerouslySetInnerHTML={{__html:v.iconf}}></i>{v.title}</Link></Menu.Item>
 	                ))
 	              }
 	            </SubMenu>
@@ -90,7 +94,7 @@ export class Layouts extends Component {
 	      </Menu>
 	    ));
 	    return (
-	      <Router>
+	      <HashRouter history={history}>
 	        <Layout style={{ minHeight: '100vh' }}>
 	           <Sider
 	            trigger={null}
@@ -127,7 +131,7 @@ export class Layouts extends Component {
 	                    if (router.exact) {
 	                      return  <Route exact key={key} path={router.path} component={router.component} />;
 	                    } else {
-	                      if (router.routes) {
+	                      if (router.childrens) {
 	                        return  <Route  key={key} path={`${router.path}/:id`} component={router.component} />;
 	                      }
 	                      return  <Route  key={key} path={router.path} component={router.component} />;
@@ -140,7 +144,7 @@ export class Layouts extends Component {
 	            </Content>
 	          </Layout>
 	        </Layout>
-	      </Router>
+	      </HashRouter>
 	    );
 	  }
 	}

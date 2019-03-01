@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-class option1 extends Component {
+class Write extends Component {
 	state = {
-	  html: '<p>优化效果很不错哦</p>'
+	  html: '<p>开始写信</p>'
 	}
 	componentDidMount() {
     
@@ -18,4 +18,4 @@ class option1 extends Component {
 	  );
 	}
 }
-export default option1;
+export default Write;

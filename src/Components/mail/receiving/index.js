@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-export class barChart1 extends Component {
+export class Receiving extends Component {
   render() {
     return (
       <div>
-        <h1>barChart1</h1>
+        <h1>开始收信</h1>
       </div>
     );
   }
 }
 
-export default barChart1;
+export default Receiving;

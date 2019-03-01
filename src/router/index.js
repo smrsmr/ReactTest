@@ -2,11 +2,6 @@
  * router 配置文件
  */
 import asyncComponent from '../Components/AsyncComponent';
-// import Home from '../Components/Home';
-// import User from '../Components/user/User';
-// import PicturesWall from '../Components/PicturesWall/PicturesWall';
-// import Mail from '../Components/mail/mail';
-// import barChart from '../Components/barChart/index';
 const routes = [
   {
     key: 'home',
@@ -40,16 +35,18 @@ const routes = [
       span: 'barChart'
     },
     component: asyncComponent(()=>import('../Components/barChart/index')),
-    routes: [
+    childrens: [
       {
-        key: 'barChart1',
-        path: '/barChart/barChart1',
-        title: 'barChart1'
+        key: 'line',
+        path: '/barChart/line',
+        title: '折线图',
+        iconf: '&#xe600;'
       },
       {
-        key: 'barChart2',
-        path: '/barChart/barChart2',
-        title: 'barChart2'
+        key: 'bar',
+        path: '/barChart/bar',
+        title: '柱状图',
+        iconf: '&#xe601;'
       }
     ]
   },
@@ -60,26 +57,18 @@ const routes = [
       icon: 'mail',
       span: 'mail'
     },
-    component: asyncComponent(()=>import('../Components/mail/mail')),
-    routes: [{
-      key: 'mail1',
-      path: '/mail/mail1',
-      title: 'mail1'
+    component: asyncComponent(()=>import('../Components/mail/index')),
+    childrens: [{
+      key: 'write',
+      path: '/mail/write',
+      title: '写信',
+      iconf: '&#xe606;'
     },
     {
-      key: 'mail2',
-      path: '/mail/mail2',
-      title: 'mail2'
-    },
-    {
-      key: 'mail3',
-      path: '/mail/mail3',
-      title: 'mail3'
-    },
-    {
-      key: 'mail4',
-      path: '/mail/mail4',
-      title: 'mail4'
+      key: 'receiving',
+      path: '/mail/receiving',
+      title: '收信',
+      iconf: '&#xe60f;'
     }]
   },
   {
@@ -89,7 +78,7 @@ const routes = [
       icon: 'cloud-o',
       span: 'cloudO'
     },
-    component: ''
+    component: asyncComponent(()=>import('../Components/PicturesWall/PicturesWall'))
   },
   {
     key: 'appstoreO',
@@ -98,7 +87,7 @@ const routes = [
       icon: 'appstore-o',
       span: 'appstoreO'
     },
-    component: ''
+    component: asyncComponent(()=>import('../Components/PicturesWall/PicturesWall'))
   },
   {
     key: 'team',
@@ -107,7 +96,7 @@ const routes = [
       icon: 'team',
       span: 'team'
     },
-    component: ''
+    component: asyncComponent(()=>import('../Components/PicturesWall/PicturesWall'))
   },
   {
     key: 'shop',
@@ -116,7 +105,7 @@ const routes = [
       icon: 'shop',
       span: 'shop'
     },
-    component: ''
+    component: asyncComponent(()=>import('../Components/PicturesWall/PicturesWall'))
   }
 ];
 
