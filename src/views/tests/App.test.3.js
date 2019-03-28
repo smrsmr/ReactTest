@@ -101,50 +101,51 @@ import './App.css';
 	}
 } */
 class NmaeFrom extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isChe: true,
-			number: 3
-		};
-		this.handChange = this.handChange.bind(this);
-	}
-	handChange(event) {
-		const target = event.target;
-		const value = target.type === 'checkbox' ? target.checked : target.value;
-		const name = target.name;
-		this.setState({
-			//es6 语法
-			[name]: value
-			//相当于es5
-			/**
+  constructor(props) {
+    super(props);
+    this.state = {
+      isChe: true,
+      number: 3
+    };
+    this.handChange = this.handChange.bind(this);
+  }
+  handChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    this.setState({
+      //es6 语法
+      [name]: value
+      //相当于es5
+      /**
 			  var partialState = {};
 				partialState[name] = value;
 				this.setState(partialState);
 			 */
-		})
-	}
-	render() {
-		return (
-			<div className="App">
-				<form>
-					<label>
-						<input type="checkbox"
-							name="isChe"
-							checked={this.state.isChe}
-							onChange={this.handChange} />
-					</label>
-					<br />
-					<label>
-						<input type="number"
-							name="number"
-							value={this.state.number}
-							onChange={this.handChange}
+    });
+  }
+  render() {
+    return (
+      <div className="App">
+        <form>
+          <label>
+            <input type="checkbox"
+              name="isChe"
+              checked={this.state.isChe}
+              onChange={this.handChange}
 						/>
-					</label>
-				</form>
-			</div>
-		)
-	}
+          </label>
+          <br />
+          <label>
+            <input type="number"
+              name="number"
+              value={this.state.number}
+              onChange={this.handChange}
+            />
+          </label>
+        </form>
+      </div>
+    );
+  }
 }
-export default NmaeFrom 
+export default NmaeFrom; 
