@@ -57,18 +57,18 @@ class Searchbox extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.emitChangeDebounced = debounce(this.emitChange, 200);
-	}
-	handleChange(e) {
+  }
+
+  componentWillUnmount() {
+    this.emitChangeDebounced.cancel();
+  }
+  handleChange(e) {
     this.emitChangeDebounced(e.target.value);
   }
 
   emitChange(value) {
     this.props.onChange(value);
   }
-  componentWillUnmount() {
-    this.emitChangeDebounced.cancel();
-  }
-
   render() {
     return (
       <input
@@ -82,17 +82,17 @@ class Searchbox extends Component {
 }
 
 class Debounce extends Component {
-	constructor(props) {
-		super(props);
-		this.onChange = this.onChange.bind(this);
-	}
-	onChange(id) {
-		console.log(id);
-	}
-	render() {
-		return (
-			<Searchbox onChange={this.onChange} value="321" />
-		)
-	} 
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+  }
+  onChange(id) {
+    console.log(id);
+  }
+  render() {
+    return (
+      <Searchbox onChange={this.onChange} value="321" />
+    );
+  } 
 }
-export default Debounce
+export default Debounce;
